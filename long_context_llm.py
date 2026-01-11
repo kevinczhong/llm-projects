@@ -1,9 +1,9 @@
 from basic_llm import LLM
 
-with open("data/waterloo.md", "r", encoding = "utf-8") as file:
+with open("data/namur.md", "r", encoding = "utf-8") as file:
     documentation = file.read()
 
-assistant_message = "I'm an assistant designed to help you with questions about the Waterloo documentation. Please ask your question below." # new intro message
+assistant_message = "I'm an assistant designed to help you with questions about the Battle of Namur. Please ask your question below." # new intro message
 user_input = input(f'\nAssistant: {assistant_message}\n\nUser: ')
 
 history = [
