@@ -36,11 +36,11 @@ def agent_loop(history):
       args = json.loads(tool_call.arguments)
 
       if function_name == "write_to_file":
-        result = {"deploy_site": write_to_file(**args)}
+        result = {"write_to_file": write_to_file(**args)}
       elif function_name == "create_audio":
-        result = {"read_webpage": create_audio(**args)}
+        result = {"create_audio": create_audio(**args)}
       elif function_name == "generate_image":
-        result = {"image": generate_image(**args)}
+        result = {"generate_image": generate_image(**args)}
 
       history += [{"type": "function_call_output", "call_id": tool_call.call_id, "output": json.dumps(result)}]
 

@@ -95,7 +95,7 @@ def create_audio(filename, script, style):
 def generate_image(filename, image_description):
     try:
         response = generation_model.responses.create(
-            model="gpt-4o",
+            model="gpt-5",
             input=image_description,
             tools=[{"type": "image_generation"}],
         )
