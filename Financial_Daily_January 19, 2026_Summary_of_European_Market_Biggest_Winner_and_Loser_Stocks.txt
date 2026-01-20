@@ -1,0 +1,25 @@
+Good day. Let's take a look at the European stock market's performance for January 19, 2026.
+
+Market Overview:
+
+On January 19, 2026, European markets experienced a downturn following U.S. President Donald Trump's announcement of a potential 10% tariff on imports from eight European countries—Denmark, Norway, Sweden, France, Germany, the UK, the Netherlands, and Finland—in response to their opposition to U.S. control of Greenland. ([apnews.com](https://apnews.com/article/df4db0546f46195d477e0306c830abf9?utm_source=openai))
+
+Major Indices:
+
+- Germany's DAX: Declined by 1.3%, closing at 24,960.33.
+- France's CAC 40: Fell 1.9%, ending at 8,101.96.
+- UK's FTSE 100: Dropped 0.4%, finishing at 10,190.26.
+
+Top Performers:
+
+- Valneva SE (France): Shares surged 11.2% to 04.19 after Stifel analysts nearly doubled their price target to 10, indicating a potential upside of 165%. ([btcc.com](https://www.btcc.com/en-US/square/N4k4m0t0/1386149?utm_source=openai))
+
+- Next PLC (UK): Stock rose 4.43% to 14,192 pence following the fifth increase in sales and earnings per share guidance for the fiscal year, driven by an 11% surge in full-price sales during the Christmas period. ([btcc.com](https://www.btcc.com/en-US/square/N4k4m0t0/1386149?utm_source=openai))
+
+Top Decliners:
+
+- Nexans SA (France): Shares declined by 4.45% due to delays in its Greece-Cyprus submarine cable project. ([btcc.com](https://www.btcc.com/en-US/square/N4k4m0t0/1386149?utm_source=openai))
+
+- Tejas Networks Ltd (India): Led the BSE's 'A' group losers, falling 8.03% to Rs 383.25. ([business-standard.com](https://www.business-standard.com/amp/markets/capital-market-news/tejas-networks-ltd-leads-losers-in-a-group-126011200599_1.html?utm_source=openai))
+
+These movements reflect the market's sensitivity to geopolitical developments and company-specific news.
