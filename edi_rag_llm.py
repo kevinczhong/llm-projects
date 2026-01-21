@@ -1,12 +1,18 @@
 from dotenv import load_dotenv
 import os
-# from langfuse.openai import openai
-from openai import OpenAI
+import base64
+from langfuse.openai import openai
+from langfuse import Langfuse
+# from openai import OpenAI
 from pinecone import Pinecone
 
 load_dotenv('.env')
-llm = OpenAI()
-# llm = openai
+
+langfuse = Langfuse()
+langfuse.auth_check
+
+# llm = OpenAI()
+llm = openai
 pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
 dense_index = pc.Index("edi-spec")
 
