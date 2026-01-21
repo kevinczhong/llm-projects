@@ -3,12 +3,17 @@ import json
 from urllib import response
 from dotenv import load_dotenv
 from datetime import date
-from openai import OpenAI
+# from openai import OpenAI
+from langfuse.openai import openai
+from langfuse import observe, get_client
 from podcast_tools import generate_image, write_to_file, create_audio, TOOLS
 
 load_dotenv()
-llm = OpenAI()
+# llm = OpenAI()
+llm = openai
+langfuse = get_client()
 
+@observe
 def llm_response(history):
   response = llm.responses.create(
     model="gpt-4.1-mini",
@@ -17,6 +22,7 @@ def llm_response(history):
   )
   return response
 
+@observe
 def agent_loop(history):
   while True:
     response = llm_response(history)
@@ -69,13 +75,18 @@ history = [
     {"role": "user", "content": user_input}
 ]
 
-while user_input != "exit":
-  response = agent_loop(history)
-            
-  print(f"\nAssistant: {response.output_text}")
+with langfuse.start_as_current_observation(as_type = "span", name = "podcast-conversation") as span:
+  while user_input != "exit":
+    response = agent_loop(history)
+              
+    print(f"\nAssistant: {response.output_text}")
 
-  user_input = input("\nUser: ")
-  history += [
-    {"role": "assistant", "content": response.output_text},
-    {"role": "user", "content": user_input}
-  ]
+    user_input = input("\nUser: ")
+    history += [
+      {"role": "assistant", "content": response.output_text},
+      {"role": "user", "content": user_input}
+    ]
+  
+  span.update(output = "Conversation complete.")
+
+langfuse.flush()
