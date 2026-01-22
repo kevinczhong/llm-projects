@@ -13,6 +13,24 @@ load_dotenv()
 llm = openai
 langfuse = get_client()
 
+MAIN_TOOLS = [
+  {
+    "type": "function",
+    "name": "podcast_production",
+    "description": "Creates a script from retrieved search results, and creates an audio file of the script via TTS.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "summary": {
+            "type": "string",
+            "description": "Summary of the podcast topic",
+          }
+        },
+        "required": ["summary"],
+      },
+  },
+]
+
 @observe
 def llm_response(history):
   response = llm.responses.create(
@@ -45,8 +63,8 @@ def agent_loop(history):
         result = {"write_to_file": write_to_file(**args)}
       elif function_name == "create_audio":
         result = {"create_audio": create_audio(**args)}
-      elif function_name == "generate_image":
-        result = {"generate_image": generate_image(**args)}
+      # elif function_name == "generate_image":
+      #   result = {"generate_image": generate_image(**args)}
 
       history += [{"type": "function_call_output", "call_id": tool_call.call_id, "output": json.dumps(result)}]
 
