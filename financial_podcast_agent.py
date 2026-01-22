@@ -117,9 +117,7 @@ def system_prompt():
 
   Once you have your topic, use the provided topic and the style, if the user specifies, and 
   use your podcast_production tool to create your podcast episode; podcast_production will handle web search,
-  script creation, and audio generation. When using podcast_production, only pass topic and style in as arguments. 
-  
-  DO NOT PASS IN filename or script when calling podcast_production."""
+  script creation, and audio generation."""
 
 assistant_message = "I'm here to help you create a financial podcast episode. Please provide a topic."
 user_input = input(f"\nAssistant: {assistant_message}\n\nUser: ")
