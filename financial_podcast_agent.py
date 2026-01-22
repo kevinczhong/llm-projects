@@ -55,7 +55,8 @@ def podcast_production(topic):
     input = f"""You are an award-winning financial journalist, articulately and
     expertly summarizing the information provided to you in {enhanced_search} in 
     the form of a script for your podcaster colleague. Write in the style of the
-    Financial Times or the Economist.
+    Financial Times or the Economist. Only write the dialogue - DO NOT include any
+    text that is not meant to be spoken.
     """
   ).output_text
 
@@ -94,11 +95,11 @@ def agent_loop(history):
       print(f"\nAssistant: {response.output_text}")
 
     for tool_call in tool_calls:
-      # function_name = tool_call.name
+      function_name = tool_call.name
       args = json.loads(tool_call.arguments)
 
-      # if function_name == "podcast_production":
-      result = {"podcast_production": podcast_production(**args)}
+      if function_name == "podcast_production":
+        result = {"podcast_production": podcast_production(**args)}
       # if function_name == "write_to_file":
       #   result = {"write_to_file": write_to_file(**args)}
       # elif function_name == "create_audio":
