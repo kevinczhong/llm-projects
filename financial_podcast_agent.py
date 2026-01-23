@@ -43,7 +43,7 @@ def podcast_production(topic):
       }
     ],
     input = f"""Perform a web search on the user provided topic: {topic} and
-    return the top five most relevant results. Prioritize results
+    return the top ten most relevant results. Prioritize results
     from credible financial news sources, such as Bloomberg, the Economist,
     the Financial Times, etc.
     """
@@ -115,9 +115,7 @@ def system_prompt():
   return f"""You are a podcaster writer/researcher, announcer, and visual artist for financial podcast producers.
   The podcaster producer will provide a topic, and you will, step-by-step, create a podcast episode on the topic.
 
-  Once you have your topic, use the provided topic and the style, if the user specifies, and 
-  use your podcast_production tool to create your podcast episode; podcast_production will handle web search,
-  script creation, and audio generation."""
+  Once you have your topic, use your podcast_production tool to create your podcast episode; podcast_production will handle web search, script creation, and audio generation."""
 
 assistant_message = "I'm here to help you create a financial podcast episode. Please provide a topic."
 user_input = input(f"\nAssistant: {assistant_message}\n\nUser: ")
